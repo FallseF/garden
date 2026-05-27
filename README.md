@@ -1,17 +1,30 @@
-# Quartz v5
+# My Digital Garden
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Personal digital garden built on [Quartz v5](https://quartz.jzhao.xyz).
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+公開先: https://fallsef.github.io/garden
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+## ローカル運用
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+```bash
+# Obsidianで開く: ~/Diary/content/ を vault として開く
 
-## Sponsors
+# ローカルプレビュー:
+npx quartz build --serve
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+# 公開（v5ブランチへpush）:
+npx quartz sync
+```
+
+## 構成
+
+- `content/` — Obsidian vault（Markdown原稿）
+- `content/diary/` — 日々の日記（`YYYY-MM-DD.md`）
+- `quartz.config.yaml` — Quartz設定
+- `.github/workflows/deploy.yml` — GitHub Pagesへの自動デプロイ
+
+## Quartzアップデート
+
+```bash
+npx quartz update
+```
